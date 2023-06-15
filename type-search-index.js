@@ -1,1 +1,0 @@
-typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"<Unnamed>","l":"App"},{"p":"<Unnamed>","l":"Main"},{"p":"Products","l":"Product"},{"p":"VendingMachines","l":"VendingMachine"}];updateSearchResults();
