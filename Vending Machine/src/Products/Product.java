@@ -65,12 +65,5 @@ public class Product {
         return name + ": " + price;
     }
 
-    public Product getProductByName(String name) {
-        for (Product product : list) {
-            if (product.getName().equals(name)) {
-                return product;
-            }
-        }
-        return null;
-    }
+
 }

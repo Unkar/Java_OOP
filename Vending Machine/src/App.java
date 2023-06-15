@@ -1,3 +1,4 @@
+import Products.BottleOfWater;
 import Products.Product;
 import VendingMachines.VendingMachine;
 public class App {
@@ -11,8 +12,8 @@ public class App {
     vendingMachine.addProduct(item1);
     vendingMachine.addProduct(item2);
     vendingMachine.addProduct(item3);
-    System.out.println(vendingMachine.toString());
-    System.out.println(vendingMachine.getList().toString());
 
+    vendingMachine.addProduct(new BottleOfWater("water", 50, 0.5));
+        System.out.println(vendingMachine.getList().toString() );
     }
 }

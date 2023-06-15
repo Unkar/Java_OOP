@@ -75,4 +75,13 @@ public class VendingMachine {
                 "\nНаименований загружено: " + list.size() +
                 "\nЗаписей в логе: " + log.size();
     }
+
+    public Product getProductByName(String name) {
+        for (Product product : list) {
+            if (product.getName().equals(name)) {
+                return product;
+            }
+        }
+        return null;
+    }
 }
