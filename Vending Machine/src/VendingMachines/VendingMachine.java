@@ -20,6 +20,12 @@ public class VendingMachine {
      */
     private List<String> log;
 
+    /**
+     *Конструктор торговой машины
+     * @param volumeOfVendingMachine объем торговой машины
+     * @param listOfProducts список продуктов
+     * @param logOfVendingMachine лог использования
+     */
     public VendingMachine(Integer volumeOfVendingMachine, List<Product> listOfProducts, List<String> logOfVendingMachine) {
         this.volume = volumeOfVendingMachine;
         this.list = listOfProducts;
