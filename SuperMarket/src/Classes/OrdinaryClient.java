@@ -6,6 +6,11 @@ public class OrdinaryClient extends Actor {
     }
 
     @Override
+    public Actor getActor() {
+        return this;
+    }
+
+    @Override
     public String getName() {
         return super.name;
     }

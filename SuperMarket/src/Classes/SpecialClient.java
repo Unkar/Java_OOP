@@ -1,9 +1,8 @@
 package Classes;
 
-import javax.swing.*;
-
 public class SpecialClient extends Actor {
     private Integer idVip;
+
     public SpecialClient(String name, Integer idVip) {
         super(name);
         this.idVip = idVip;
@@ -18,4 +17,18 @@ public class SpecialClient extends Actor {
         return idVip;
     }
 
+    @Override
+    public boolean isTakeOrder() {
+        return super.isTakeOrder();
+    }
+
+    @Override
+    public Actor getActor() {
+        return this;
+    }
+
+    @Override
+    public boolean isMakeOrder() {
+        return super.isMakeOrder();
+    }
 }
