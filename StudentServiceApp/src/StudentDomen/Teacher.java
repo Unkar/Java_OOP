@@ -2,12 +2,12 @@ package StudentDomen;
 
 public class Teacher extends User {
     private int idTeacher;
-    private String subject;
+    private String graduate;
 
-    public Teacher(String firstName, String lastName, int age, int idTeacher, String subject) {
+    public Teacher(String firstName, String lastName, int age, int idTeacher, String graduate) {
         super(firstName, lastName, age);
         this.idTeacher = idTeacher;
-        this.subject = subject;
+        this.graduate = graduate;
     }
 
     public int getIdTeacher() {
@@ -18,12 +18,12 @@ public class Teacher extends User {
         this.idTeacher = idTeacher;
     }
 
-    public String getSubject() {
-        return subject;
+    public String getGraduate() {
+        return graduate;
     }
 
-    public void setSubject(String subject) {
-        this.subject = subject;
+    public void setGraduate(String graduate) {
+        this.graduate = graduate;
     }
 
     /**
@@ -36,7 +36,7 @@ public class Teacher extends User {
                 ", lastName='" + lastName + '\'' +
                 ", age=" + age +
                 ", idTeacher=" + idTeacher +
-                ", subject='" + subject + '\'' +
+                ", subject='" + graduate + '\'' +
                 '}';
     }
 }
