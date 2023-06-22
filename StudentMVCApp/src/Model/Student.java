@@ -1,6 +1,5 @@
 package Model;
 
-import org.jetbrains.annotations.NotNull;
 
 public class Student extends User implements Comparable<Student> {
     private int idStudent;
@@ -20,16 +19,11 @@ public class Student extends User implements Comparable<Student> {
 
     @Override
     public String toString() {
-        return "\nStudent{" +
-                "firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", age=" + age +
-                ", idStudent=" + idStudent +
-                '}';
+        return String.format("%d %s %s %d", idStudent, firstName, lastName, age);
     }
 
     @Override
-    public int compareTo(@NotNull Student o) {
+    public int compareTo(Student o) {
         if(super.getAge() == o.getAge()){
             return 0;
         }

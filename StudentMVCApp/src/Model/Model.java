@@ -1,8 +1,10 @@
 package Model;
 
+import Controller.iGetModel;
+
 import java.util.List;
 
-public class Model {
+public class Model implements iGetModel {
     private List<Student> students;
 
 
