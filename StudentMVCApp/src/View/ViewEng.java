@@ -6,7 +6,7 @@ import Model.Student;
 import java.util.HashMap;
 import java.util.Scanner;
 
-public class View implements iGetView {
+public class ViewEng implements iGetView {
     public void printAllStudents(HashMap<Long, Student> students) {
         System.out.println("--------All students--------");
         for (Student student : students.values()) {

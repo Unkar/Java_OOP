@@ -2,18 +2,17 @@ package Controller;
 
 import Model.Student;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashMap;
 
 public class Controller {
-    private List<Student> students;
+    private HashMap<Long, Student> students;
     private iGetView view;
     private iGetModel model;
 
     public Controller(iGetView view, iGetModel model) {
         this.view = view;
         this.model = model;
-        this.students = new ArrayList<Student>();
+        this.students = new HashMap<Long, Student>();
     }
 
 
@@ -52,6 +51,15 @@ public class Controller {
                     System.out.println("EXIT");
                     break;
                 case LIST:
+                    updateView();
+                    break;
+                case DELETE:
+                    String studentID = view.promt("Enter id");
+                    if (model.checkIsStudentID(studentID)) {
+                        model.deleteStudent(studentID);
+                    } else {
+                        System.out.println("Student not found");
+                    }
                     updateView();
                     break;
             }

@@ -7,11 +7,12 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 public class FileRepo implements iGetModel {
     private String fileName;
-    private List<Student> students;
+    private HashMap<Long, Student> students;
 
     public FileRepo(String fileName) {
         this.fileName = fileName;
@@ -20,11 +21,11 @@ public class FileRepo implements iGetModel {
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
-        this.students = new ArrayList<Student>();
+        this.students = new HashMap<Long, Student>();
     }
 
     public void addStudent(Student student) {
-        this.students.add(student);
+        this.students.put((long) student.getIdStudent(), student);
     }
 
     public void readAllStudentsFromFile() {
@@ -36,7 +37,7 @@ public class FileRepo implements iGetModel {
             while (line != null) {
                 String[] param = line.split(" ");
                 Student pers = new Student(param[0], param[1], Integer.parseInt(param[2]), Integer.parseInt(param[3]));
-                this.students.add(pers);
+                this.students.put((long) pers.getIdStudent(),pers);
                 line = reader.readLine();
             }
 
@@ -50,7 +51,7 @@ public class FileRepo implements iGetModel {
         try {
             File file = new File(fileName);
             FileWriter fw = new FileWriter(file);
-            for (Student student : this.students) {
+            for (Student student : students.values()) {
                 fw.write(String.format("%s %s %d %d\n", student.getFirstName(), student.getLastName(), student.getAge(), student.getIdStudent()));
             }
             fw.flush();
@@ -61,8 +62,20 @@ public class FileRepo implements iGetModel {
     }
 
     @Override
-    public List<Student> getAllStudents() {
+    public HashMap<Long,Student> getAllStudents() {
         readAllStudentsFromFile();
         return students;
     }
+
+    @Override
+    public void deleteStudent(String studentId) {
+        deleteStudent(studentId);
+    }
+
+    @Override
+    public boolean checkIsStudentID(String studentID) {
+        return students.containsKey(Long.parseLong(studentID));
+    }
+
+
 }

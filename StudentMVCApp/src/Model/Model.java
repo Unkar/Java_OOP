@@ -2,17 +2,27 @@ package Model;
 
 import Controller.iGetModel;
 
-import java.util.List;
+import java.util.HashMap;
 
 public class Model implements iGetModel {
-    private List<Student> students;
+    private HashMap<Long, Student> students;
 
 
-    public Model(List<Student> students) {
+    public Model(HashMap<Long, Student> students) {
         this.students = students;
     }
 
-    public List<Student> getAllStudents(){
+    public HashMap<Long,Student> getAllStudents(){
         return students;
     }
+
+    public boolean checkIsStudentID(String studentID){
+        return students.containsKey(Long.parseLong(studentID));
+    }
+
+    public void deleteStudent(String studentID){
+        students.remove(Long.parseLong(studentID));
+    }
+
+
 }
